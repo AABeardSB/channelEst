@@ -1,0 +1,1290 @@
+options:
+  parameters:
+    author: Ashley Beard
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: 'Generates signal with five randomized-frequency signals and a Gaussian
+      noise source. Seperates frequencies into bins and estimates power of each to
+      locate signals in bandwidth. '
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: no_gui
+    hier_block_src_path: '.:'
+    id: power_estimation
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: '1'
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Power Estimation Flowgraph
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: freq_0
+  id: variable
+  parameters:
+    comment: ''
+    value: random.uniform(2.412e9, 2.462e9)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [465, 8]
+    rotation: 0
+    state: true
+- name: freq_1
+  id: variable
+  parameters:
+    comment: ''
+    value: random.uniform(2.412e9, 2.462e9)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [482, 21]
+    rotation: 0
+    state: true
+- name: freq_2
+  id: variable
+  parameters:
+    comment: ''
+    value: random.uniform(2.412e9, 2.462e9)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [509, 45]
+    rotation: 0
+    state: true
+- name: freq_3
+  id: variable
+  parameters:
+    comment: ''
+    value: random.uniform(2.412e9, 2.462e9)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [534, 68]
+    rotation: 0
+    state: true
+- name: freq_4
+  id: variable
+  parameters:
+    comment: ''
+    value: random.uniform(2.412e9, 2.462e9)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [555, 90]
+    rotation: 0
+    state: true
+- name: function_probe_1
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_0_0_0
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [47, 812]
+    rotation: 0
+    state: true
+- name: noise_amp
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.01'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [315, 12]
+    rotation: 0
+    state: true
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 166e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [204, 11]
+    rotation: 0
+    state: enabled
+- name: source_amp
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.05'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [338, 38]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_0_0_0
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [487, 805]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_0_0_0_0
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [71, 823]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_0_0
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [513, 818]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_0
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [98, 834]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [544, 829]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [126, 845]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [572, 839]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [152, 855]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [602, 848]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [181, 863]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [626, 859]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [948, 804]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [969, 816]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [992, 825]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1011, 835]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1029, 846]
+    rotation: 0
+    state: true
+- name: variable_function_probe_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0
+  id: variable_function_probe
+  parameters:
+    block_id: blocks_probe_signal_x_0_0_1
+    comment: ''
+    function_args: ''
+    function_name: level
+    poll_rate: '10'
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 855]
+    rotation: 0
+    state: true
+- name: analog_noise_source_x_0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: noise_amp
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [259, 495]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_1
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: source_amp
+    comment: ''
+    freq: freq_0
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [36, 173]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_1_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: source_amp
+    comment: ''
+    freq: freq_4
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [35, 465]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_1_0_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: source_amp
+    comment: ''
+    freq: freq_3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [254, 347]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_1_0_0_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: source_amp
+    comment: ''
+    freq: freq_1
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [257, 203]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_1_0_0_0_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: source_amp
+    comment: ''
+    freq: freq_2
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [38, 316]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '6'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [545, 289]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1233, 156]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1232, 282]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1230, 448]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_0_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1220, 570]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_1
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1223, 185]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_1_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1237, 346]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_1_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1228, 481]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_1_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1213, 605]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_1_0_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1213, 667]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_1_0_0_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1218, 698]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_2
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1221, 220]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_2_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1235, 383]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_2_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1222, 510]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_2_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1234, 313]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_3
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1229, 250]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_3_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1231, 414]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_3_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1220, 539]
+    rotation: 0
+    state: true
+- name: blocks_complex_to_mag_squared_3_0_0_0
+  id: blocks_complex_to_mag_squared
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1215, 635]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_xx_0
+  id: blocks_multiply_const_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '5'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [707, 430]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1444, 314]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1452, 480]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1448, 446]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1451, 412]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1449, 346]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1453, 381]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1452, 511]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1449, 698]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1455, 665]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1446, 635]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1443, 607]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1447, 572]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1449, 541]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1449, 282]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1447, 250]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1443, 219]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1445, 185]
+    rotation: 0
+    state: true
+- name: blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0_0_0_0
+  id: blocks_probe_signal_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1445, 154]
+    rotation: 0
+    state: true
+- name: blocks_stream_to_vector_0
+  id: blocks_stream_to_vector
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_items: '18'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [698, 528]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [712, 344]
+    rotation: 0
+    state: true
+- name: blocks_vector_to_streams_0
+  id: blocks_vector_to_streams
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '18'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [991, 155]
+    rotation: 0
+    state: true
+- name: fft_vxx_0
+  id: fft_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    fft_size: '18'
+    forward: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nthreads: '1'
+    shift: 'True'
+    type: complex
+    window: window.blackmanharris(18)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [643, 598]
+    rotation: 0
+    state: enabled
+- name: import_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import pmt
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 33]
+    rotation: 0
+    state: true
+- name: import_0_0
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import random
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [683, 30]
+    rotation: 0
+    state: true
+
+connections:
+- [analog_noise_source_x_0, '0', blocks_add_xx_1, '5']
+- [analog_sig_source_x_1, '0', blocks_add_xx_1, '0']
+- [analog_sig_source_x_1_0, '0', blocks_add_xx_1, '4']
+- [analog_sig_source_x_1_0_0, '0', blocks_add_xx_1, '3']
+- [analog_sig_source_x_1_0_0_0, '0', blocks_add_xx_1, '1']
+- [analog_sig_source_x_1_0_0_0_0, '0', blocks_add_xx_1, '2']
+- [blocks_add_xx_1, '0', blocks_throttle_0, '0']
+- [blocks_complex_to_mag_squared_0, '0', blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_0_0, '0', blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_0_0_0, '0', blocks_probe_signal_x_0_0_0, '0']
+- [blocks_complex_to_mag_squared_0_0_0_0, '0', blocks_probe_signal_x_0_0_1_0_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_1, '0', blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_1_0, '0', blocks_probe_signal_x_0_0_0_0_0, '0']
+- [blocks_complex_to_mag_squared_1_0_0, '0', blocks_probe_signal_x_0_0, '0']
+- [blocks_complex_to_mag_squared_1_0_0_0, '0', blocks_probe_signal_x_0_0_1_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_1_0_0_0_0, '0', blocks_probe_signal_x_0_0_1_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_1_0_0_0_0_0, '0', blocks_probe_signal_x_0_0_1_0,
+  '0']
+- [blocks_complex_to_mag_squared_2, '0', blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_2_0, '0', blocks_probe_signal_x_0_0_0_0_0_0, '0']
+- [blocks_complex_to_mag_squared_2_0_0, '0', blocks_probe_signal_x_0_0_1, '0']
+- [blocks_complex_to_mag_squared_2_0_0_0, '0', blocks_probe_signal_x_0, '0']
+- [blocks_complex_to_mag_squared_3, '0', blocks_probe_signal_x_0_0_1_0_0_0_0_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_3_0, '0', blocks_probe_signal_x_0_0_0_0, '0']
+- [blocks_complex_to_mag_squared_3_0_0, '0', blocks_probe_signal_x_0_0_1_0_0_0_0_0_0,
+  '0']
+- [blocks_complex_to_mag_squared_3_0_0_0, '0', blocks_probe_signal_x_0_0_1_0_0_0,
+  '0']
+- [blocks_multiply_const_xx_0, '0', blocks_stream_to_vector_0, '0']
+- [blocks_stream_to_vector_0, '0', fft_vxx_0, '0']
+- [blocks_throttle_0, '0', blocks_multiply_const_xx_0, '0']
+- [blocks_vector_to_streams_0, '0', blocks_complex_to_mag_squared_0, '0']
+- [blocks_vector_to_streams_0, '1', blocks_complex_to_mag_squared_1, '0']
+- [blocks_vector_to_streams_0, '10', blocks_complex_to_mag_squared_1_0_0, '0']
+- [blocks_vector_to_streams_0, '11', blocks_complex_to_mag_squared_2_0_0, '0']
+- [blocks_vector_to_streams_0, '12', blocks_complex_to_mag_squared_3_0_0, '0']
+- [blocks_vector_to_streams_0, '13', blocks_complex_to_mag_squared_0_0_0_0, '0']
+- [blocks_vector_to_streams_0, '14', blocks_complex_to_mag_squared_1_0_0_0, '0']
+- [blocks_vector_to_streams_0, '15', blocks_complex_to_mag_squared_3_0_0_0, '0']
+- [blocks_vector_to_streams_0, '16', blocks_complex_to_mag_squared_1_0_0_0_0, '0']
+- [blocks_vector_to_streams_0, '17', blocks_complex_to_mag_squared_1_0_0_0_0_0, '0']
+- [blocks_vector_to_streams_0, '2', blocks_complex_to_mag_squared_2, '0']
+- [blocks_vector_to_streams_0, '3', blocks_complex_to_mag_squared_3, '0']
+- [blocks_vector_to_streams_0, '4', blocks_complex_to_mag_squared_0_0, '0']
+- [blocks_vector_to_streams_0, '5', blocks_complex_to_mag_squared_2_0_0_0, '0']
+- [blocks_vector_to_streams_0, '6', blocks_complex_to_mag_squared_1_0, '0']
+- [blocks_vector_to_streams_0, '7', blocks_complex_to_mag_squared_2_0, '0']
+- [blocks_vector_to_streams_0, '8', blocks_complex_to_mag_squared_3_0, '0']
+- [blocks_vector_to_streams_0, '9', blocks_complex_to_mag_squared_0_0_0, '0']
+- [fft_vxx_0, '0', blocks_vector_to_streams_0, '0']
+
+metadata:
+  file_format: 1
