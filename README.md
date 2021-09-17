@@ -1,6 +1,5 @@
 # channelEst
-Authors: Ashley Beard
-         Steven Sharp
+Authors: Ashley Beard and Steven Sharp
          
 Channel Estimator using ML and GNU Radio
 
